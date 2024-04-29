@@ -3,6 +3,17 @@
 ## SQL 기본
 
 
+### WHERE 절
+#### 📍 NULL 관련 함수
+- NVL 함수(Oracle) : NULL 이면 다른 값으로 바꾸는 함수이다.
+  - NVN(MGR, 0) 은 MGR 칼럼이 NULL 이면 0으로 바꾼다.
+- NVL 함수(Oracle) : NVL 함수와 DECODE(if) 함수를 하나로 만든 것이다. 
+  - NVL2(MGR, **1**, 0) 은 MGR 칼럼이 **NULL 이 아니면 1**을, NULL 이면 0을 반환한다.
+- 📌 NULLIF 함수(Oracle, MS-SQL, MySQL) : 두 개의 값이 **같으면 NULL** 을, **같지 않으면 첫 번째 값**을 반환한다.
+  - NULLIF(exp1, exp2) 은 exp1과 exp2가 같으면 NULL 을, 같지 않으면 exp1 을 반환한다.
+- COALESCE(Oracle, MS-SQL, MySQL) : **NULL 이 아닌 최초의 인자 값**을 반환한다.
+  - COALESCE(exp1, exp2, exp3) 은 **exp1이 NULL 이 아니면 exp1**의 값을, 그렇지 않으면 그 뒤의 값의 NULL 여부를 판단하여 값을 반환한다.
+
 ### 표준조인
 #### 📍 NATURAL JOIN 은 두 테이블 간에 동일한 칼럼 이름을 가진 것을 모두 출력하는 (INNER)조인 방법이다.
 - **Alias 를 사용할 수 없다.**
