@@ -5,13 +5,13 @@
 
 ### WHERE 절
 #### 📍 NULL 관련 함수
-- NVL 함수(Oracle) : NULL 이면 다른 값으로 바꾸는 함수이다.
+- `NVL` 함수(Oracle) : NULL 이면 다른 값으로 바꾸는 함수이다.
   - NVN(MGR, 0) 은 MGR 칼럼이 NULL 이면 0으로 바꾼다.
-- NVL 함수(Oracle) : NVL 함수와 DECODE(if) 함수를 하나로 만든 것이다. 
+- `NVL2` 함수(Oracle) : NVL 함수와 DECODE(if) 함수를 하나로 만든 것이다. 
   - NVL2(MGR, **1**, 0) 은 MGR 칼럼이 **NULL 이 아니면 1**을, NULL 이면 0을 반환한다.
-- 📌 NULLIF 함수(Oracle, MS-SQL, MySQL) : 두 개의 값이 **같으면 NULL** 을, **같지 않으면 첫 번째 값**을 반환한다.
+- 📌 `NULLIF` 함수(**Oracle**, MS-SQL, MySQL) : 두 개의 값이 **같으면 NULL** 을, **같지 않으면 첫 번째 값**을 반환한다.
   - NULLIF(exp1, exp2) 은 exp1과 exp2가 같으면 NULL 을, 같지 않으면 exp1 을 반환한다.
-- COALESCE(Oracle, MS-SQL, MySQL) : **NULL 이 아닌 최초의 인자 값**을 반환한다.
+- `COALESCE`(Oracle, MS-SQL, MySQL) : **NULL 이 아닌 최초의 인자 값**을 반환한다.
   - COALESCE(exp1, exp2, exp3) 은 **exp1이 NULL 이 아니면 exp1**의 값을, 그렇지 않으면 그 뒤의 값의 NULL 여부를 판단하여 값을 반환한다.
 
 ### 표준조인
@@ -55,7 +55,7 @@
 ### 그룹함수
 #### ROLLUP
 <img src="https://github.com/hyewon218/kim-jpa2/assets/126750615/7eb77bb2-73c3-4298-b0b9-4e4e7c60d856" width="50%"/><br>
-> 위 이미지가 ROLLUP의 원리를 전부 설명해 준다. 각 번호는 해당 칼럼으로 GROUP BY를 한 결과를 준다는 뜻이다. 첫번째 GROUP BY절 같은 경우는 총 4개의 GROUP을 만든다는 뜻이다. ROLLUP은 아래와 같은 원리로 실행된다.
+> 위 이미지가 ROLLUP 의 원리를 전부 설명해 준다. 각 번호는 해당 칼럼으로 GROUP BY를 한 결과를 준다는 뜻이다. 첫번째 GROUP BY절 같은 경우는 총 4개의 GROUP을 만든다는 뜻이다. ROLLUP은 아래와 같은 원리로 실행된다.
 
 1. ROLLUP의 인자로 들어온 칼럼을 오른쪽부터 하나씩 빼면서 GROUP을 만듭니다.
 2. "()"의 의미는 GROUP이 없는 즉, 전체에 대한 결과를 출력한다는 뜻 입니다. EX(SUM 함수 사용하면 전체 SUM 구한다는 뜻)
